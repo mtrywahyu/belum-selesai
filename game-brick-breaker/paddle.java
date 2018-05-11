@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class paddle extends Actor
 {
-    private ball Ball;
+    private ball ball;
     
     /**
      * Act - do whatever the paddle wants to do. This method is called whenever
@@ -16,7 +16,7 @@ public class paddle extends Actor
      */
     public void addedToWorld(World world)
     {
-        Ball();
+        ball();
     }
     
     public void act() 

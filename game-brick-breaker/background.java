@@ -15,6 +15,9 @@ public class background extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+   
+    
+    
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,9 +26,10 @@ public class background extends World
         paddle = new paddle();
         addObject( paddle, getWidth() /2, getHeight() - 40 );
         prepare ();
+        
     }
     
-    private void ballOut()
+    public void ball()
     {
         paddle.ball();
     }
@@ -106,7 +110,12 @@ public class background extends World
         balok balok21 = new balok();
         addObject(balok21, 600, 170);
         balok21.setLocation(655, 169);
-        
+        nyawa hati = new nyawa();
+        addObject(hati,710,580);
+        nyawa hati2 = new nyawa();
+        addObject(hati2,730,580);
+        nyawa hati3 = new nyawa();
+        addObject(hati3,750,580);
     }
     
    

@@ -14,6 +14,7 @@ public class ball extends Actor
      */
     private int deltaX;
     private int deltaY;
+    private boolean NeedToInit = true;
     
     private boolean stuck = true;
     public void act() 
@@ -21,17 +22,20 @@ public class ball extends Actor
         if(!stuck)
         {
             move();
-            BallOut();
+            ballOut();
         }
         
-    }   
+    }
     
-    private void BallOut()
+     
+ 
+    private void ballOut()
     {
-        if (getY() == getWorld().getHeight()-1) {
-            ((background) getWorld()).BallOut();
+        if (getY () == getWorld().getHeight()-1){
+            ((background) getWorld ()).ball();
             getWorld().removeObject(this);
         }
+        
     }
     
     public void move()
