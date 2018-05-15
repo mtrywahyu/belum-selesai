@@ -9,12 +9,25 @@ import greenfoot .*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class background extends World
 {
    private paddle paddle;
+   Counter counter = new Counter();
    
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    public GreenfootSound music = new GreenfootSound ("backgroundMusic.mp3");
+    public void started()
+    {
+        music.setVolume(60);
+        music.play();
+    }
+    
+    public void stopped()
+    {
+        music.setVolume(60);
+        music.play();
+    }
    
     
     
@@ -28,6 +41,12 @@ public class background extends World
         prepare ();
         
     }
+    
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
     
     public void ball()
     {
@@ -116,8 +135,14 @@ public class background extends World
         addObject(hati2,730,580);
         nyawa hati3 = new nyawa();
         addObject(hati3,750,580);
+        Counter counter = new Counter();
+        addObject(counter,55,25);
+        counter.setLocation(52,18);
+        back_awal back_awal = new back_awal();
+        addObject(back_awal,765,29);
+        back_awal.setLocation(760,25);
     }
-    
+  
    
 }
 

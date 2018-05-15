@@ -14,8 +14,7 @@ public class mulai extends Actor
      */
     public void act() 
     {
-      
-    if (Greenfoot.mouseClicked(this)){
+        if (Greenfoot.mouseClicked(this)){
         Greenfoot.delay(8);
         Greenfoot.setWorld(new background());
     }

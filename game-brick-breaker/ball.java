@@ -15,19 +15,30 @@ public class ball extends Actor
     private int deltaX;
     private int deltaY;
     private boolean NeedToInit = true;
+    private GreenfootSound backgroundSound;
+    private int mute = 0;
+    private int play = 0;
+    
     
     private boolean stuck = true;
     public void act() 
     {
+
         if(!stuck)
         {
             move();
+            World world;
+            world = getWorld();
+            background bg1 = (background)world;
+            Counter counter = bg1.getCounter();
+            counter.addScore();
+            Score();
             ballOut();
+            
         }
         
     }
-    
-     
+      
  
     private void ballOut()
     {
@@ -60,6 +71,9 @@ public class ball extends Actor
     {
         Actor paddle = getOneIntersectingObject(paddle.class);
         if(paddle !=null) {
+            
+            
+        
             deltaY = -deltaY;
             int offset = getX() - paddle.getX();
             deltaX = deltaX + (offset/10);
@@ -74,28 +88,40 @@ public class ball extends Actor
     private void checkbalok()
     {
       Actor balok = getOneIntersectingObject(balok.class);
+       
         if (balok !=null){
         deltaY = - deltaY;
         int offset = getX() - balok.getX();
         deltaX = deltaX + (offset/10); 
+         World world;
+         world = getWorld();
+         world.removeObject(balok);
+         
         if (deltaX > 7) {
                 deltaX = 7;
         }
         if (deltaX < -7) {
                 deltaX = -7;
         }
-      }
-       World world;
-       world = getWorld();
-       world.removeObject(balok);
+      }  
     }
+    
+    private void Score()
+    {
+    }
+    
     public void release()
       {
         deltaX = 0;
         deltaY = -5;
         stuck = false;
       }
-}
+      
+    }
+
+
+
+
 
 
 
